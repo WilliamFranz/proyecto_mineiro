@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %} ASISTENCIA | EDIT {% endblock %}
+
+{% block content %}
+
+<h1>ACTUALIZAR ASISTENCIA</h1>
+<form action="{{ url_for('asistencia.edit',id=asistencia.id) }}" method="POST">
+    <div class="mb-3">
+        <label for="" class="form-label">nombre</label>
+        <input type="text" class="form-control" name="nombre" value="{{ asistencia.nombre }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">hora</label>
+        <input type="text" class="form-control" name="hora" value="{{ asistencia.hora }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Movil</label>
+        <input type="movil" class="form-control" name="movil" value="{{ asistencia.movil }}" required>
+    </div><div class="mb-3">
+        <label for="" class="form-label">Fecha</label>
+        <input type="date" class="form-control" name="fecha" value="{{ asistencia.fecha }}" required>
+    </div>
+<button type="submit" class="btn btn-primary">Registrar</button>
+
+
+</form>
+
+{% endblock %}

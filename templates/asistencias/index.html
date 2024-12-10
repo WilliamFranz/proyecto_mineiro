@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} ASISTENCIAS {% endblock %}
+
+{% block content%}
+<h1>lista de asistencia</h1>
+<a href="{{url_for('asistencia.create')}}" class="btn btn-success mb-3">nuevo</a>
+<table class="table table striped">
+<tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Hora</th>
+    <th>Fecha</th>
+    <th></th>
+    <th></th>
+</tr>
+{% for item in asistencias %}
+<tr>
+    <td>{{item.id}}</td>
+    <td>{{item.nombre}}</td>
+    <td>{{item.hora}}</td>
+    <td>{{item.fecha}}</td>
+    <td>
+        <a href="{{ url_for('asistencia.edit',id=item.id) }}" class="btn btn-warning">editar</a>
+    </td>
+    <td>
+        <a href="{{ url_for('asistencia.delete',id=item.id) }} " class="btn btn-danger">eliminar</a>
+    
+    </td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

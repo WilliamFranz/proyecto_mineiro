@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %} CONTRATOS {% endblock %}
+
+{% block content%}
+
+<h1>lista de Contrato</h1>
+<a href="{{url_for('contrato.create')}}" class="btn btn-success mb-3">nuevo</a>
+<table class="table table striped">
+<tr>
+    <th>ID</th>
+    <th>Empresa</th>
+    <th>Nombre cliente</th>
+    <th>Origen</th>
+    <th>Destino final</th>
+    <th>Precio servicio</th>
+    <th>Nombre conductor</th>
+    <th>Numero movil</th>
+    <th>fecha</th>
+    <th></th>
+    <th></th>
+</tr>
+{% for item in contratos %}
+<tr>
+    <td>{{item.id}}</td>
+    <td>{{item.empresa}}</td>
+    <td>{{item.nombre_cliente}}</td>
+    <td>{{item.origen}}</td>
+    <td>{{item.destino_final}}</td>
+    <td>{{item.precio_servicio}}</td>
+    <td>{{item.nombre_conductor}}</td>
+    <td>{{item.numero_movil}}</td>
+    <td>{{item.fecha}}</td>
+    <td>
+        <a href="{{ url_for('contrato.edit',id=item.id) }}" class="btn btn-warning">editar</a>
+    </td>
+    <td>
+        <a href="{{ url_for('contrato.delete',id=item.id) }} " class="btn btn-danger">eliminar</a>
+    
+    </td>
+</tr>
+{% endfor %}
+</table>
+
+
+{% endblock %}

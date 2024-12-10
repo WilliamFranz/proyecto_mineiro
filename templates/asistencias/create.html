@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %} ASISTENCIA | CREATE {% endblock %}
+
+{% block content %}
+
+<h1>Registro de Asistencia</h1>
+<form action="{{ url_for('asistencia.create') }}" method="POST">
+    <div class="mb-3">
+        <label for="" class="form-label">hora</label>
+        <input type="datetime" class="form-control" name="hora" required>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Usuario</label>
+        <input type="text" class="form-control" name="nombre" required>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Movil</label>
+        <input type="text" class="form-control" name="movil" required>
+    </div><div class="mb-3">
+        <label for="" class="form-label">Fecha</label>
+        <input type="date" class="form-control" name="fecha" required>
+
+        </select>
+    </div>
+<button type="submit" class="btn btn-primary">Registrar</button>
+
+
+</form>
+
+{% endblock %}

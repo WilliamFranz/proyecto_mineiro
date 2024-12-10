@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %} CONTRATOS | CREATE {% endblock %}
+
+{% block content %}
+
+<h1>Registro de Contrato</h1>
+<form action="{{ url_for('contrato.create') }}" method="POST">
+    
+    <div class="mb-3">
+        <label for="" class="form-label">Empresa</label>
+        <input type="text" class="form-control" name="empresa" required>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Nombre cliente</label>
+        <input type="text" class="form-control" name="nombre_cliente" required>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Origen</label>
+        <input type="text" class="form-control" name="origen" required>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Destino final</label>
+        <input type="text" class="form-control" name="destino_final" required>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Precio servicio</label>
+        <input type="number" class="form-control" name="precio_servicio" required>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Nombre conductor</label>
+        <input type="text" class="form-control" name="nombre_conductor" required>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Numero Movil</label>
+        <input type="number" class="form-control" name="numero_movil" required>
+    </div><div class="mb-3">
+        <label for="" class="form-label">Fecha</label>
+        <input type="date" class="form-control" name="fecha" required>
+
+        </select>
+    </div>
+<button type="submit" class="btn btn-primary">Registrar Contrato</button>
+
+
+</form>
+
+{% endblock %}

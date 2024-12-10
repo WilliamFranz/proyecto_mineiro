@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %} CONTRATOS | CREATE {% endblock %}
+
+{% block content %}
+
+<h1>Actualizar de Contrato</h1>
+<form action="{{ url_for('contrato.create',id=contrato.id) }}" method="POST">
+    
+    <div class="mb-3">
+        <label for="" class="form-label">Empresa</label>
+        <input type="text" class="form-control" name="empresa" value="{{ contrato.empresa }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Nombre cliente</label>
+        <input type="text" class="form-control" name="nombre_cliente" value="{{ contrato.nombre_cliente }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Origen</label>
+        <input type="text" class="form-control" name="origen" value="{{ contrato.origen }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Destino final</label>
+        <input type="text" class="form-control" name="destino_final" value="{{ contrato.destino_final }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Precio servicio</label>
+        <input type="number" class="form-control" name="precio_servicio" value="{{ contrato.precio_servicio }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Nombre conductor</label>
+        <input type="text" class="form-control" name="nombre_conductor" value="{{ contrato.nombre_conductor }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Numero Movil</label>
+        <input type="number" class="form-control" name="numero_movil" value="{{ contrato.numero_movil }}" required>
+    </div><div class="mb-3">
+        <label for="" class="form-label">Fecha</label>
+        <input type="date" class="form-control" name="fecha" value="{{ contrato.fecha }}" required>
+
+        </select>
+    </div>
+<button type="submit" class="btn btn-primary">Registrar Contrato</button>
+
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %} CLIENTES {% endblock %}
+
+{% block content%}
+<h1>lista de Clientes</h1>
+<a href="{{url_for('cliente.create')}}" class="btn btn-success mb-3">nuevo</a>
+<table class="table table striped">
+<tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>numero</th>
+    <th>familia</th>
+    <th>hora</th>
+    <th>movil</th>
+    <th>fecha</th>
+    <th></th>
+    <th></th>
+</tr>
+{% for item in clientes %}
+<tr>
+    <td>{{item.id}}</td>
+    <td>{{item.nombre}}</td>
+    <td>{{item.numero}}</td>
+    <td>{{item.familia}}</td>
+    <td>{{item.hora}}</td>
+    <td>{{item.movil}}</td>
+    <td>{{item.fecha}}</td>
+    <td>
+        <a href="{{ url_for('cliente.edit',id=item.id) }}" class="btn btn-warning">editar</a>
+    </td>
+    <td>
+        <a href="{{ url_for('cliente.delete',id=item.id) }} " class="btn btn-danger">eliminar</a>
+    
+    </td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
